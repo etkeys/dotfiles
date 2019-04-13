@@ -1,0 +1,11 @@
+.ssh/config
+.ssh/environment
+.ssh/keys_AgFoxte
+.ssh/keys_AgFoxte.pub
+.ssh/SpecialUses/*
+.ssh/ssh-add_load-keys.txt
+.ssh/WhatPermissionsAreNeeded.txt
+.gnupg/*
+.secure/*
+.config/my-configs/api_keys.ini
+.config/my-configs/travel-destinations.ini

@@ -1,0 +1,112 @@
+{
+    "window.zoomLevel": 0,
+    "php.validate.executablePath": "/opt/lampp/bin/php",
+    "workbench.colorTheme": "Solarized Dark",
+    "python.jediEnabled": false,
+    "python.pythonPath": "/usr/bin/python3",
+    "python.linting.pylintEnabled": false,
+    "python.linting.enabled": true,
+    "java.home": "/usr/lib/jvm/default-java",
+    "java.autobuild.enabled": false,
+    "FSharp.fsacRuntime": "netcore",
+    "editor.acceptSuggestionOnEnter": "off",
+    "editor.copyWithSyntaxHighlighting": false,
+    "editor.cursorStyle": "block",
+    "editor.emptySelectionClipboard": false,
+    "editor.tabSize": 2,
+    "editor.rulers": [80],
+    "workbench.startupEditor": "none",
+    "vim.leader": "<space>",
+    "editor.lineNumbers": "relative",
+    "workbench.settings.editor": "json",
+    "vim.insertModeKeyBindingsNonRecursive": [
+        {
+            // Easier exit out of insert mode
+            "before":["j","j"],
+            "after":["<Esc>"]
+        }  
+    ],
+    "vim.normalModeKeyBindingsNonRecursive": [
+        {
+            // Add a blank line below
+            "before": ["<leader>",";"],
+            "after": ["A","<enter>","<Esc>"]
+        },
+        {
+            // Move current line up
+            "before": ["<leader>", "U"],
+            "after": ["V","x","k","P"]
+        },
+        {
+            // Copy current line up
+            "before": ["<leader>", "u"],
+            "after": ["V","y","P"]
+        },
+        {
+            // Move current line down
+            "before": ["<leader>", "D"],
+            "after": ["V","x","p"]
+        },
+        {
+            // Copy current line down
+            "before": ["<leader>", "d"],
+            "after": ["V","y","p"]
+        },
+        {
+            // Switch to window on the left
+            "before": ["<leader>", "h"],
+            "after": ["<C-w>","h"]
+        },
+        {
+            // Switch to window on the right
+            "before": ["<leader>","l"],
+            "after": ["<C-w>","l"]
+        },
+        {
+            // Switch to window down
+            "before": ["<leader>","j"],
+            "after": ["<C-w>","j"]
+        },
+        {
+            // Switch to window up
+            "before": ["<leader>","k"],
+            "after": ["<C-w>","k"]
+        },
+        {
+            // Switch to tab left
+            "before": ["g","h"],
+            "commands": [":tabp"]
+        },
+        {
+            // Switch to tab right
+            "before": ["g","l"],
+            "commands": [":tabn"]
+        },
+        {
+            // Change "delete (cut)" to true delete
+            "before":["d"],
+            "after":["\"", "_","d"]
+        }
+    ],
+    "vim.visualModeKeyBindingsNonRecursive": [
+        {
+            // Change "delete (cut)" to true delete
+            "before":["d"],
+            "after":["\"", "_","d"]
+        }
+    ],
+    
+    "vim.statusBarColorControl": true,
+    "vim.statusBarColors.insert": "#dc322f",
+    "vim.statusBarColors.normal": "#002b36",
+    "vim.statusBarColors.visual": "#268bd2",
+    "vim.statusBarColors.visualline": "#2aa198",
+    "vim.statusBarColors.visualblock": "#6c71c4",
+    "vim.statusBarColors.replace": "#ffffff",
+    "workbench.colorCustomizations": {
+        "statusBar.background": "#002b36",
+        "statusBar.noFolderBackground": "#002b36",
+        "statusBar.debuggingBackground": "#002b36"
+    },
+    "editor.acceptSuggestionOnCommitCharacter": false
+}
