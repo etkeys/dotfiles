@@ -215,5 +215,5 @@ bindsym XF86AudioPrev exec playerctl previous
 bindsym XF86Calculator exec --no-startup-id mate-calc
 bindsym $mod+F3 exec dmenu-websearch.sh
 bindsym $mod+F4 exec dmenu-youtubesearch.sh
-bindsym $mod+Shift+m exec clementine-play-di.sh
+bindsym $mod+Shift+m exec clementine-start.sh
 bindsym $mod+Shift+p exec pavucontrol
