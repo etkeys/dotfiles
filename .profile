@@ -8,8 +8,8 @@
 # for ssh logins, install and configure the libpam-umask package.
 #umask 022
 
-# Set variable to know
-if [ "$HOSTNAME" = "RogFox551" ] && [ "$USER" = "erik" ] ; then
+# Set variable to know if this machine is a primary machine
+if [ -f "$HOME/.primaryhost" ] ; then
     export USER_PRIMARY_HOST_FLAG=0
 fi
 
