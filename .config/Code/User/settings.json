@@ -1,24 +1,36 @@
 {
-    "window.zoomLevel": 0,
-    "php.validate.executablePath": "/opt/lampp/bin/php",
-    "workbench.colorTheme": "Solarized Dark",
-    "python.jediEnabled": false,
-    "python.pythonPath": "/usr/bin/python3",
-    "python.linting.pylintEnabled": false,
-    "python.linting.enabled": true,
-    "java.home": "/usr/lib/jvm/default-java",
-    "java.autobuild.enabled": false,
-    "FSharp.fsacRuntime": "netcore",
+    "auto-close-tag.SublimeText3Mode": true,
+    "editor.acceptSuggestionOnCommitCharacter": false,
     "editor.acceptSuggestionOnEnter": "off",
     "editor.copyWithSyntaxHighlighting": false,
     "editor.cursorStyle": "block",
     "editor.emptySelectionClipboard": false,
-    "editor.tabSize": 2,
-    "editor.rulers": [80],
-    "workbench.startupEditor": "none",
-    "vim.leader": "<space>",
+    "editor.fontFamily": "'Ubuntu mono', 'Droid Sans Mono', 'monospace', monospace, 'Droid Sans Fallback'",
+    "editor.fontSize": 17,
+    "editor.fontWeight": "bold",
     "editor.lineNumbers": "relative",
-    "workbench.settings.editor": "json",
+    "editor.tabSize": 4,
+    "editor.detectIndentation": false,
+    "editor.rulers": [80, 120],
+    "FSharp.fsacRuntime": "netcore",
+    "FSharp.lineLens.enabled":"replaceCodeLens",
+    "FSharp.lineLens.prefix": " # ",
+    "java.home": "/usr/lib/jvm/default-java",
+    "java.autobuild.enabled": false,
+    "keyboard.dispatch": "keyCode",
+    "markdownlint.config": {
+        "MD007":{"indent": 4},
+        "MD013": false,
+        "MD024": false
+    },
+    "php.validate.executablePath": "/opt/lampp/bin/php",
+    "python.jediEnabled": false,
+    "python.linting.pylintEnabled": false,
+    "python.linting.enabled": true,
+    "python.pythonPath": "/usr/bin/python3",
+    "terminal.integrated.fontSize": 16,
+    "terminal.integrated.fontWeight": "bold",
+    "vim.cursorStylePerMode.insert": "line",
     "vim.insertModeKeyBindingsNonRecursive": [
         {
             // Easier exit out of insert mode
@@ -26,50 +38,66 @@
             "after":["<Esc>"]
         }  
     ],
+    "vim.leader": "<space>",
     "vim.normalModeKeyBindingsNonRecursive": [
+        {
+            //New file
+            "before":["<F4>"],
+            "after": [":tabnew"]
+        },
+        {
+            // Ctrl-y increased distance
+            "before":["<C-y>"],
+            "after":["3","<C-y>"]
+        },
+        {
+            // Ctrl-e increased distance
+            "before":["<C-e>"],
+            "after":["3","<C-e>"]
+        },
         {
             // Add a blank line below
             "before": ["<leader>",";"],
             "after": ["A","<enter>","<Esc>"]
         },
         {
-            // Move current line up
-            "before": ["<leader>", "U"],
-            "after": ["V","x","k","P"]
+            // Copy current line down
+            "before": ["<leader>", "d"],
+            "commands":["editor.action.copyLinesDownAction"]
         },
         {
             // Copy current line up
             "before": ["<leader>", "u"],
-            "after": ["V","y","P"]
+            "commands":["editor.action.copyLinesUpAction"]
         },
         {
             // Move current line down
             "before": ["<leader>", "D"],
-            "after": ["V","x","p"]
+            "commands":["editor.action.moveLinesDownAction"]
         },
         {
-            // Copy current line down
-            "before": ["<leader>", "d"],
-            "after": ["V","y","p"]
+            // Move current line up
+            "before": ["<leader>", "U"],
+            "commands":["editor.action.moveLinesUpAction"]
         },
         {
             // Switch to window on the left
-            "before": ["<leader>", "h"],
+            "before": ["g", "H"],
             "after": ["<C-w>","h"]
         },
         {
             // Switch to window on the right
-            "before": ["<leader>","l"],
+            "before": ["g","L"],
             "after": ["<C-w>","l"]
         },
         {
             // Switch to window down
-            "before": ["<leader>","j"],
+            "before": ["g","J"],
             "after": ["<C-w>","j"]
         },
         {
             // Switch to window up
-            "before": ["<leader>","k"],
+            "before": ["g","K"],
             "after": ["<C-w>","k"]
         },
         {
@@ -88,7 +116,40 @@
             "after":["\"", "_","d"]
         }
     ],
+    "vim.statusBarColorControl": false,
+    "vim.statusBarColors.normal": "#002b36",
+    "vim.surround": true,
     "vim.visualModeKeyBindingsNonRecursive": [
+        {
+            // Ctrl-y increased distance
+            "before":["<C-y>"],
+            "after":["3","<C-y>"]
+        },
+        {
+            // Ctrl-e increased distance
+            "before":["<C-e>"],
+            "after":["3","<C-e>"]
+        },
+        {
+            // Copy current line down
+            "before": ["<leader>", "d"],
+            "commands":["editor.action.copyLinesDownAction"]
+        },
+        {
+            // Copy current line up
+            "before": ["<leader>", "u"],
+            "commands":["editor.action.copyLinesUpAction"]
+        },
+        {
+            // Move current line down
+            "before": ["<leader>", "D"],
+            "commands":["editor.action.moveLinesDownAction"]
+        },
+        {
+            // Move current line up
+            "before": ["<leader>", "U"],
+            "commands":["editor.action.moveLinesUpAction"]
+        },
         {
             // Change "delete (cut)" to true delete
             "before":["d"],
@@ -96,17 +157,20 @@
         }
     ],
     
-    "vim.statusBarColorControl": true,
-    "vim.statusBarColors.insert": "#dc322f",
-    "vim.statusBarColors.normal": "#002b36",
-    "vim.statusBarColors.visual": "#268bd2",
-    "vim.statusBarColors.visualline": "#2aa198",
-    "vim.statusBarColors.visualblock": "#6c71c4",
-    "vim.statusBarColors.replace": "#ffffff",
+    "window.zoomLevel": 0,
     "workbench.colorCustomizations": {
         "statusBar.background": "#002b36",
         "statusBar.noFolderBackground": "#002b36",
         "statusBar.debuggingBackground": "#002b36"
     },
-    "editor.acceptSuggestionOnCommitCharacter": false
+    "workbench.startupEditor": "none",
+    "workbench.settings.editor": "json",
+    "workbench.editor.tabSizing": "shrink",
+    "extensions.ignoreRecommendations": false,
+    "python.languageServer": "Microsoft",
+    "FSharp.suggestGitignore": false,
+    "FSharp.suggestSdkScripts": false,
+    "FSharp.showExplorerOnStartup": false,
+    "editor.renderWhitespace": "none",
+    "editor.renderControlCharacters": false
 }

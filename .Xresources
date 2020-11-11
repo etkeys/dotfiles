@@ -5,7 +5,7 @@
 URxvt.background: rgba:2300/2700/2900/d300
 URxvt.cursorColor: #cb4b16
 URxvt.depth: 32
-URxvt.font: xft:monospace:bold:size=14
+URxvt.font: xft:monospace:bold:size=12
 URxvt.foreground: #eeeeec
 URxvt.meta8: true
 URxvt.scrollBar: false

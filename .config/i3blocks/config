@@ -115,9 +115,9 @@ COLOR_ON=#ff0000
 COLOR_OFF=#ffffff
 KEY=CAPS
 
-[battery]
-label=⚡
-interval=30
+# [battery]
+# label=⚡
+# interval=30
 
 
 [date-time-cal]
