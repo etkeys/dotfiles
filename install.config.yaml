@@ -1,0 +1,15 @@
+
+
+- create:
+    - ~/bin
+    - ~/repos
+
+
+- link:
+    ~/Downloads:
+        path: /tmp
+        force: true
+        relink: true
+    ~/tmp:
+        path: /tmp
+        force: true
