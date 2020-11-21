@@ -1,5 +1,5 @@
 [submodule ".modules/dotbot"]
 	path = .modules/dotbot
-	url = https://github.com/ekeys/dotbot.git
+	url = https://github.com/etkeys/dotbot.git
 	ignore = dirty
 	branch = bugfix/fix-glob-dropping-leading-dot
