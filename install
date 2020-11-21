@@ -3,12 +3,12 @@
 set -e
 
 CONFIG="install.conf.yaml"
-DOTBOT_DIR=".modules/dotbot"
 
 DOTBOT_BIN="bin/dotbot"
 BASEDIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
 
 cd "${BASEDIR}"
+DOTBOT_DIR="$(git config --file=.gitmodules --get submodule.dotbot.path)"
 
 # Don't update a specific submodule, update those that are active=true or
 # submodule.$name.update != none. I don't know what method i'm going to use
