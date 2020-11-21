@@ -30,7 +30,7 @@
     # ~/.Xmodmap: home/.Xmodmap
     # ~/.Xresources: home/.Xresources
     ~/:
-        path: home/*
+        path: home/.*
         glob: true
         relink: true
     ~/Downloads:
