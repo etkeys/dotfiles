@@ -145,6 +145,9 @@ PS1=$(build_ps1)
 
 # If this is an xterm set the title to user@host:dir
 case "$TERM" in
+linux)
+    echo -en "\e]PC5656C9" # change dark blue to a lighter dark blue
+    ;;
 xterm*|rxvt*)
     PS1="\[\e]0;${debian_chroot:+($debian_chroot)}\u@\h: \w\a\]$PS1"
     ;;
