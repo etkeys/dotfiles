@@ -8,7 +8,7 @@
 
 - clean: ['~']
 - shell:
-    - [rm ~/{toby,VirtualBoxVMs}, Removing possible dead links...will reapply]
+    - ["rm ~/{toby,VirtualBoxVMs}", Removing possible dead links...will reapply]
 
 
 - create:
@@ -34,7 +34,9 @@
     ~/VirtualBoxVMs:
         path: /mnt/vmdrive/$USER/virtualbox
         ignore-missing: true
-    ~/.config/Code/User: config/Code/User/*
+    ~/.config/Code/User/:
+        path: config/Code/User/*
+        glob: true
 
 
 # Install theme files
