@@ -34,6 +34,7 @@
     ~/VirtualBoxVMs:
         path: /mnt/vmdrive/$USER/virtualbox
         ignore-missing: true
+    ~/.config/Code/User: config/Code/User/*
 
 
 # Install theme files
