@@ -7,6 +7,8 @@
 
 
 - clean: ['~']
+- shell:
+    - [rm ~/{toby,VirtualBoxVMs}, Removing possible dead links...will reapply]
 
 
 - create:
@@ -14,9 +16,11 @@
     - ~/repos
     - ~/.themes
 
+
 # TODO Can this flag be set by some other means?
 - shell:
     - [touch ~/.primaryhost, Create the primary host flag]
+
 
 - link:
     ~/:
@@ -31,8 +35,9 @@
         path: /mnt/vmdrive/$USER/virtualbox
         ignore-missing: true
 
+
 # Install theme files
 - shell:
-    - cd ~
-    - command: ls .dotfiles/themes/*.tar.gz | head -n 1 | xargs tar -vxf
+    - command: cd ~; ls .dotfiles/themes/*.tar.gz | head -n 1 | xargs tar -vxf
+      description: Installing theme files
       stderr: true
