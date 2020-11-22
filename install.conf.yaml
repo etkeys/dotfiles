@@ -37,13 +37,21 @@
         path: /mnt/vmdrive/$USER/virtualbox
         ignore-missing: true
     ~/.config/:
-        path: config/*/*
+        path: config.subdirs/*/*
         glob: true
-        exclude: [config/autostart/*, config/Code/*]
-    ~/.config/autostart: config/autostart
+        exclude:
+            - config.subdirs/autostart/*
+            - config.subdirs/Code/*
+            - config.subdirs/my-configs/*
+            - config.subdirs/tilda/*
+            - config.subdirs/xrandr/*
+    ~/.config/autostart: config.subdirs/autostart
     ~/.config/Code/User/:
-        path: config/Code/User/*
+        path: config.subdirs/Code/User/*
         glob: true
+    ~/.config/my-configs: config.subdirs/my-configs
+    ~/.config/tilda: config.subdirs/tilda
+    ~/.config/xrandr: config.subdirs/xrandr
 
 
 
