@@ -6,9 +6,11 @@
         relink: true 
 
 
-- clean: ['~']
-- shell:
-    - ["rm ~/{toby,VirtualBoxVMs}", Removing possible dead links...will reapply]
+- clean:
+    ~/:
+        force: true
+    ~/.config:
+        recursive: true
 
 
 - create:
@@ -34,12 +36,14 @@
     ~/VirtualBoxVMs:
         path: /mnt/vmdrive/$USER/virtualbox
         ignore-missing: true
+    ~/.config/:
+        path: config/*/*
+        glob: true
+        exclude: [config/autostart/*, config/Code/*]
     ~/.config/autostart: config/autostart
     ~/.config/Code/User/:
         path: config/Code/User/*
         glob: true
-    ~/.config/Dharkael/flameshot.ini: config/Dharkael/flameshot.ini
-    ~/.config/Slack/local-settings.json: config/Slack/local-settings.json
 
 
 
