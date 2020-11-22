@@ -34,12 +34,12 @@
     ~/VirtualBoxVMs:
         path: /mnt/vmdrive/$USER/virtualbox
         ignore-missing: true
-    ~/.config/autostart: ~
+    ~/.config/autostart: config/autostart
     ~/.config/Code/User/:
         path: config/Code/User/*
         glob: true
-    ~/.config/Dharkael/flameshot.ini: ~
-    ~/.config/Slack/local-settings.json: ~
+    ~/.config/Dharkael/flameshot.ini: config/Dharkael/flameshot.ini
+    ~/.config/Slack/local-settings.json: config/Slack/local-settings.json
 
 
 
