@@ -1,6 +1,0 @@
-
-id: vmdrive
-crypt:
-    name: vmdrive
-mount:
-    dir: /mnt/vmdrive
