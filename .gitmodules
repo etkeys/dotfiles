@@ -1,5 +1,5 @@
 [submodule "dotbot"]
 	path = lib/dotbot
 	url = https://github.com/etkeys/dotbot.git
-	branch = bugfix/fix-glob-dropping-leading-dot
+	branch = next/include-pending-prs
 	ignore = dirty
