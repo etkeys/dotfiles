@@ -1,11 +1,3 @@
-cef_user_data/
-chromium/
-dconf/
-enchant/
-evolution/
-# libvirt files should be on external drive not user .config
-libvirt/
-unity3d/
 # This file gets updated everytime pavucontrol is closed.
 # It contains nothing of significance.
 pavucontrol.ini
