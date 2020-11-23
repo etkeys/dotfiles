@@ -1,6 +1,4 @@
+*.tdb
+*sink
+*source
 cookie
-b9de151a19224380af14a1efd10a3879-card-database.tdb
-b9de151a19224380af14a1efd10a3879-device-volumes.tdb
-b9de151a19224380af14a1efd10a3879-stream-volumes.tdb
-b9de151a19224380af14a1efd10a3879-default-sink
-b9de151a19224380af14a1efd10a3879-default-source
