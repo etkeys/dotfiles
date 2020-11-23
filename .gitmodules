@@ -41,7 +41,7 @@
 	ignore = dirty
 [submodule "i3blocklets"]
 	path = lib/my-i3blocklets
-	url = https://gitlab.com/etkeys/i3blocks-blocklets.git
+	url = https://github.com/etkeys/i3blocks-blocklets.git
 	ignore = dirty
 [submodule "quickemu"]
 	path = lib/quickemu
