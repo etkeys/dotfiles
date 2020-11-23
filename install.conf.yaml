@@ -13,6 +13,7 @@
 
 - create:
     - ~/bin
+    - ~/bin/i3blocklets
     - ~/repos
     - ~/.themes
 
@@ -36,6 +37,10 @@
     ~/VirtualBoxVMs:
         path: /mnt/vmdrive/$USER/virtualbox
         ignore-missing: true
+
+
+- shell:
+    - [cd lib/my-i3blocklets; ./deploy, Installing i3blocklets]
 
 
 # Install theme files

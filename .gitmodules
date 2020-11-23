@@ -39,3 +39,7 @@
 	path = lib/vim-plugins/vim-unimpaired
 	url = https://github.com/tpope/vim-unimpaired.git
 	ignore = dirty
+[submodule "i3blocklets"]
+	path = lib/my-i3blocklets
+	url = https://gitlab.com/etkeys/i3blocks-blocklets.git
+	ignore = dirty
