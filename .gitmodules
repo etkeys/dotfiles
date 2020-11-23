@@ -43,3 +43,6 @@
 	path = lib/my-i3blocklets
 	url = https://github.com/etkeys/i3blocks-blocklets.git
 	ignore = dirty
+[submodule "quickemu"]
+	path = lib/quickemu
+	url = https://github.com/wimpysworld/quickemu.git

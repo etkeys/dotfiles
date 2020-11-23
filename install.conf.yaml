@@ -27,6 +27,9 @@
     ~/:
         path: home/.*
         glob: true
+    ~/bin/quickemu:
+        path: lib/quickemu/quickemu
+        if: "which snap &&  snap list | grep '^qemu-virgil'"
     ~/.config: ~
     ~/Downloads: /tmp
     ~/tmp: /tmp
