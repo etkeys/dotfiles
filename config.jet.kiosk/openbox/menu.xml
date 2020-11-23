@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<openbox_menu xmlns="http://openbox.org/"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://openbox.org/
+                file:///usr/share/openbox/menu.xsd">
+
+<menu id="root-menu" label="Openbox 3">
+  <item label="Music player">
+    <action name="Execute"><execute>vlc</execute></action>
+  </item>
+  <item label="Web browser">
+    <action name="Execute"><execute>firefox</execute></action>
+  </item>
+  <!-- This requires the presence of the 'openbox-menu' package to work -->
+  <!-- <menu id="/Debian" /> -->
+  <separator />
+  <item label="Audio control">
+    <action name="Execute"><execute>pavucontrol</execute></action>
+  </item>
+  <separator />
+  <item label="Reload audio">
+    <action name="Execute"><execute>systemctl --user restart pulseaudio</execute></action>
+  </item>
+  <item label="Reload session">
+    <action name="Exit" />
+  </item>
+  <item label="Restart machine">
+    <action name="Execute"><execute>reboot</execute></action>
+  </item>
+</menu>
+
+</openbox_menu>
