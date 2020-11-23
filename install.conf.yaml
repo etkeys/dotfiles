@@ -26,15 +26,16 @@
     ~/:
         path: home/.*
         glob: true
+    ~/.config: ~
     ~/Downloads: /tmp
     ~/tmp: /tmp
     ~/toby:
         path: /nfs/home/$USER
         ignore-missing: true
+    ~/.vim: ~
     ~/VirtualBoxVMs:
         path: /mnt/vmdrive/$USER/virtualbox
         ignore-missing: true
-    ~/.config: ~
 
 
 # Install theme files
