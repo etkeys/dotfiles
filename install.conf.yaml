@@ -8,6 +8,10 @@
         relink: true 
 
 
+- sudo:
+    - shell: 'dt=$(date +%y%m%d%H%M); touch /tmp/$dt.file; echo "Look for $dt.file"'
+
+
 - clean: ['~/','~/bin','~/.config']
 
 

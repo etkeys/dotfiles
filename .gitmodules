@@ -53,4 +53,3 @@
 [submodule "sudo"]
 	path = lib/dotbot-plugins/sudo
 	url = https://github.com/DrDynamic/dotbot-sudo.git
-	ignore = dirty
