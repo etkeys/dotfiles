@@ -8,7 +8,7 @@
         relink: true 
 
 
-- clean: ['~/', '~/.config']
+- clean: ['~/','~/bin','~/.config']
 
 
 - create:
@@ -27,6 +27,13 @@
     ~/:
         path: home/.*
         glob: true
+    ~/bin/:
+        path: lib/scripts/*
+        glob: true
+        exclude:
+            - lib/scripts/LICENSE
+            - lib/scripts/npdisksetup
+            - lib/scripts/save-the-change
     ~/bin/quickemu:
         path: lib/quickemu/quickemu
         if: "which snap &&  snap list | grep '^qemu-virgil'"
