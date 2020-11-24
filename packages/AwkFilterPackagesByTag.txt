@@ -1,0 +1,8 @@
+
+will need to do variable assignment to pass in $HOSTNAME && $HOSTCAT...buuut if
+Running this from a server config file, wouldn't I have a concept of what HOSTCAT
+will be and can just hard code that???
+
+awk -F , '$1 ~ /^apt/ && 3 ~ /;?(any|$HOSTNAME|$HOSTCAT);?/ {print $2}' packages.master.csv > to-install-apt.lst
+
+$HOSTCAT might be specific server type. I'm thinking somthing along the lines of VMs...Like when I spin up a new vm, how can I bootstrap with the packages that I would need by default?
