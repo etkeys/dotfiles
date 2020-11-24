@@ -59,6 +59,10 @@
         - description: Perform apt cache update
           command: apt-get update
 
+        - description: Install packages
+          command: packages/install-packages.py --tags $HOSTNAME $HOSTCAT
+
+
         
 
 - clean: ['~/','~/bin','~/.config']

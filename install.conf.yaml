@@ -10,4 +10,16 @@
         stderr: true
         stdout: true
 
+- sudo:
+    - shell:
+        - description: Install packages
+          command: packages/install-packages.py --tags $HOSTNAME $HOSTCAT
+
+- sudo:
+    - shell:
+        - description: Install software
+          command: >
+              cd packages;
+              ./build-package-list;
+
 

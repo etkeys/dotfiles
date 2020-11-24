@@ -1,0 +1,88 @@
+provider,package,tags,additional_options,comments
+apt,python3-pip,any,,At top to allow for pip provider sooner. will need to link to /usr/local/bin/pip
+apt,snap,any,,At top to allow for snap provider sooner.
+apt,acpi,aludra;harper,,
+apt,alsa-utils,jet,,
+apt,apt-file,any,,
+apt,apt-transport-https,any,,
+apt,arandr,aludra;harper,,
+apt,arp-scan,aludra;harper,,
+snap,audacity,harper,,
+apt,autoconf,aludra;harper,,
+apt,build-essential,aludra;harper,,
+apt,caffeine,aludra,,
+apt,cheese,aludra;harper,,
+snap,chromium,aludra;harper,,
+snap,code,aludra;harper,--classic,
+apt,coolkey,harper,,support for reading CAC cards
+apt,curl,any,,
+snap,discord,harper,,
+apt,dconf-editor,aludra;harper,,
+apt,dkms,any,,
+apt,dotnet-sdk-3.1,aludra;harper,,
+apt,feh,,,For controlling background wallpaper. Might not be needed with relgolith
+apt,ffmpeg,aludra;harper,,
+apt,flameshot,aludra;harper,,
+apt,fonts-symbola,,,Needed to build luke smith dmenu
+apt,handbrake,harper,,
+snap,htop,any,,
+snap,hugo,aludra;harper,--channle=extended/stable,
+apt,hwinfo,aludra;harper,,
+apt,i3blocks,,,Replaced with i3xrocks
+pip,i3ipc,aludra;harper,,Python lib to control i3wm and sway
+apt,iotop,,,
+apt,kdeconnect,aludra;harper,,
+apt,landscape-common,aludra;harper,,Display system info when starting a terminal emulator
+apt,libappindicator1,,,
+apt,libdvdcss2,harper,,
+apt,libdvdcss-dev,harper,,
+apt,libdvd-pkg,harper,,
+apt,libfontconfig1-dev,,,Needed to build luke smith dmenu
+apt,libindicator7,,,
+apt,libncursesw5-dev,,,Needed for luke smith something I think?
+snap,libreoffice,aludra;harper,,
+apt,libx11-dev,,,Needed for luke smith dmenu
+apt,libxft-dev,,,Needed for luke smith dmenu
+apt,libxinerama-dev,,,I don't know what this was for..maybe building something for X?
+apt,lxappearance,,,Will be need if creating i3 desktop from ground up.
+apt,lynx,aludra;harper,,Helps with markdown rendering.
+apt,nautilus,aludra;harper,,
+apt,neofetch,any,,Show Linux System Information with Distribution Logo
+apt,nfs-common,aludra;harper;jet;toby,,
+apt,numlockx,aludra;harper,,
+apt,obs-studio,harper,,
+apt,openssh-server,server,,
+apt,openbox,jet,,
+apt,packages-microsoft-prod,aludra;harper,,
+apt,pandoc,aludra;harper,,Helps with markdown rendering.
+apt,pavucontrol,aludra;harper;jet,,For jet need to install this after alsa.
+apt,pulseaudio,jet,,PulseAudio sound server to be used on top of Alsa
+apt,pcscd,harper,,Helps with reading CAC cards.
+apt,pcsc-tools,harper,,Helps with reading CAC cards.
+snap,powershell,aludra;harper,--classic,
+apt,python3-dev,,,Will be installed with python3-pip. Keep here so I don't forget.
+apt,python3-venv,aludra;harper,,
+snap,qemu-virgil,harper,--channel=edge,
+apt,ranger,aludra;harper,,
+apt,redshift,aludra;harper;jet,,
+apt,redshift-gtk,aludra;harper;jet,,
+apt,regolith-desktop-minimal,aludra;harper,,
+apt,rename,any,,
+apt,rxvt-unicode,aludra;harper,,
+apt,sqlite3,aludra;harper,,
+apt,sqlite3-doc,aludra;harper,,
+apt,sqlite3-pcre,aludra;harper,,
+apt,ssh-askpass,harper,,
+apt,steam,harper,,
+apt,sysstat,any,,
+apt,thunderbird,aludra;harper,,
+apt,transmission,aludra;harper,,
+apt,tree,any,,
+snap,uno-calculator,aludra;harper,--channel=beta,
+apt,vim,any,,
+apt,vim-gtk3,aludra;harper,,
+apt,virt-manager,harper;jet,,
+apt,xdotool,aludra;harper,,
+apt,yad,aludra;harper,,
+apt,yadm,,,
+pip,youtube-dl,aludra;harper,,
