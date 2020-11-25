@@ -50,7 +50,8 @@
 
 # TODO Can this flag be set by some other means?
 - shell:
-    - [touch ~/.primaryhost, Create the primary host flag]
+    - description: Create primary host flag
+      command: touch ~/.primaryhost
 
 
 - link:
@@ -80,11 +81,14 @@
 
 
 - shell:
-    - [cd lib/my-i3blocklets; ./deploy, Installing i3blocklets]
+    - description: Install i3blocks blocklets
+      command: >
+        cd lib/my-i3blocklets;
+        ./deploy;
 
 
 # Install theme files
 - shell:
     - command: cd ~; ls .dotfiles/themes/*.tar.gz | head -n 1 | xargs tar -vxf
       description: Installing theme files
-      stderr: true
+      stdout: false
