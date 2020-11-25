@@ -15,7 +15,7 @@
 - sudo:
     - shell:
         - description: Updating grub
-        - command: >
+          command: >
               datestamp=$(date +%y%m%d%H%M);
               cp /etc/default/grub /etc/default/grub.$datestamp.bak;
               sed -E "
@@ -25,7 +25,7 @@
               " /etc/default/grub > newgrub;
 
         - description: Disable CUPS
-        - command: >
+          command: >
               if systemctl is-active cups ; then
                   systemctl stop cups;
                   systemctl disable cups;
