@@ -6,32 +6,36 @@
         create: true
         force: true
         relink: true 
+    shell:
+        stderr: true
+        stdout: true
 
 
+# TODO Need to actually call update-grub
 - sudo:
     - shell:
-        description: Updating grub
-        command: >
-            datestamp=$(date +%y%m%d%H%M);
-            cp /etc/default/grub /etc/default/grub.$datestamp.bak;
-            sed -E "
-                s/^GRUB_TIMEOUT_STYLE=.+/GRUB_TIMEOUT_STYLE=menu/;
-                s/^GRUB_TIMEOUT=.+/GRUB_TIMEOUT=5/;
-                s/^GRUB_CMDLINE_LINUX_DEFAULT.+/GRUB_CMDLINE_LINUX_DEFAULT=\"\"/
-            " /etc/default/grub > newgrub;
-    - shell:
-        description: Disable CUPS
-        command: >
-            if [ systemctl is-active cups ]; then
-                systemctl stop cups;
-                systemctl disable cups;
-                echo cups disabled;
-            fi;
-            if [ systemctl is-active cups-browsed ]; then
-                systemctl stop cups-browsed;
-                systemctl disable cups-browsed;
-                echo cups-browsed disabled;
-            fi;
+        - description: Update grub
+          command: >
+              datestamp=$(date +%y%m%d%H%M);
+              cp /etc/default/grub /etc/default/grub.$datestamp.bak;
+              sed -E "
+                  s/^GRUB_TIMEOUT_STYLE=.+/GRUB_TIMEOUT_STYLE=menu/;
+                  s/^GRUB_TIMEOUT=.+/GRUB_TIMEOUT=5/;
+                  s/^GRUB_CMDLINE_LINUX_DEFAULT.+/GRUB_CMDLINE_LINUX_DEFAULT=\"\"/
+              " /etc/default/grub > newgrub;
+
+        - description: Disable CUPS
+          command: >
+              if systemctl is-active cups ; then
+                  systemctl stop cups;
+                  systemctl disable cups;
+                  echo cups disabled;
+              fi;
+              if systemctl is-active cups-browsed ]; then
+                  systemctl stop cups-browsed;
+                  systemctl disable cups-browsed;
+                  echo cups-browsed disabled;
+              fi;
 
 
 - clean: ['~/','~/bin','~/.config']
@@ -46,7 +50,8 @@
 
 # TODO Can this flag be set by some other means?
 - shell:
-    - [touch ~/.primaryhost, Create the primary host flag]
+    - description: Create primary host flag
+      command: touch ~/.primaryhost
 
 
 - link:
@@ -76,11 +81,13 @@
 
 
 - shell:
-    - [cd lib/my-i3blocklets; ./deploy, Installing i3blocklets]
+    - description: Install i3blocks blocklets
+      command: >
+        cd lib/my-i3blocklets;
+        ./deploy;
 
-
-# Install theme files
-- shell:
-    - command: cd ~; ls .dotfiles/themes/*.tar.gz | head -n 1 | xargs tar -vxf
-      description: Installing theme files
-      stderr: true
+    - description: Install theme files
+      stdout: false
+      command: >
+          cd ~;
+          ls .dotfiles/themes/*.tar.gz | head -n 1 | xargs tar -vxf;
