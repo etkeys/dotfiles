@@ -14,7 +14,7 @@
 # TODO Need to actually call update-grub
 - sudo:
     - shell:
-        - description: Updating grub
+        - description: Update grub
           command: >
               datestamp=$(date +%y%m%d%H%M);
               cp /etc/default/grub /etc/default/grub.$datestamp.bak;
@@ -36,6 +36,22 @@
                   systemctl disable cups-browsed;
                   echo cups-browsed disabled;
               fi;
+        
+        # - description: Add Microsoft .NET Core package signing key
+        #   command: >
+        #       cd /tmp;
+        #       wget -q "https://packages.microsoft.com/config/ubunut/$(lsb_release --short --release)/packages-microsoft-prod.deb";
+        #       dpkg -i packages-microsoft-prod.deb
+
+        # - description: Add ppa for Regolith Desktop
+        #   command: yes | add-apt-repository ppa:regolith-linux/release
+
+        - description: Install software
+          command: >
+              cd packages;
+              ./build-package-list;
+
+
 
 
 - clean: ['~/','~/bin','~/.config']
@@ -81,6 +97,15 @@
 
 
 - shell:
+    - description: Download vim pathogen
+      command: >
+          DOTVIMAUTODIR="${PWD}/vim/autoload/";
+          SHASUMFILE="${PWD}/sha256.sums";
+          cd /tmp;
+          curl -LSo "pathogen.vim" "https://tpo.pe/pathogen.vim";
+          sha256sum --check --ignore-missing "$SHASUMFILE" && \
+            mv "pathogen.vim" "$DOTVIMAUTODIR";
+
     - description: Install i3blocks blocklets
       command: >
         cd lib/my-i3blocklets;
