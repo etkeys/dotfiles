@@ -86,9 +86,8 @@
         cd lib/my-i3blocklets;
         ./deploy;
 
-
-# Install theme files
-- shell:
-    - command: cd ~; ls .dotfiles/themes/*.tar.gz | head -n 1 | xargs tar -vxf
-      description: Installing theme files
+    - description: Install theme files
       stdout: false
+      command: >
+          cd ~;
+          ls .dotfiles/themes/*.tar.gz | head -n 1 | xargs tar -vxf;
