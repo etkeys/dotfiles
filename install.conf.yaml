@@ -11,108 +11,26 @@
         stdout: true
 
 
-# TODO Need to actually call update-grub
 - sudo:
     - shell:
-        - description: Update grub
-          command: >
-              datestamp=$(date +%y%m%d%H%M);
-              cp /etc/default/grub /etc/default/grub.$datestamp.bak;
-              sed -E "
-                  s/^GRUB_TIMEOUT_STYLE=.+/GRUB_TIMEOUT_STYLE=menu/;
-                  s/^GRUB_TIMEOUT=.+/GRUB_TIMEOUT=5/;
-                  s/^GRUB_CMDLINE_LINUX_DEFAULT.+/GRUB_CMDLINE_LINUX_DEFAULT=\"\"/
-              " /etc/default/grub > newgrub;
-
-        - description: Disable CUPS
-          command: >
-              if systemctl is-active cups ; then
-                  systemctl stop cups;
-                  systemctl disable cups;
-                  echo cups disabled;
-              fi;
-              if systemctl is-active cups-browsed ]; then
-                  systemctl stop cups-browsed;
-                  systemctl disable cups-browsed;
-                  echo cups-browsed disabled;
-              fi;
+         - description: Add Microsoft .NET Core package signing key
+           command: >
+               cd /tmp;
+               wget -q "https://packages.microsoft.com/config/ubunut/$(lsb_release --short --release)/packages-microsoft-prod.deb";
+               dpkg -i packages-microsoft-prod.deb
         
-        # - description: Add Microsoft .NET Core package signing key
+         - description: Add repo for steam
+           command: yes | add-apt-repository add-apt-repository multiverse
+
+         - description: Add ppa for Regolith Desktop
+           command: yes | add-apt-repository ppa:regolith-linux/release
+        
+         - description: Perform apt cache update
+           command: apt-get updated
+
+
+        # - description: Install software
         #   command: >
-        #       cd /tmp;
-        #       wget -q "https://packages.microsoft.com/config/ubunut/$(lsb_release --short --release)/packages-microsoft-prod.deb";
-        #       dpkg -i packages-microsoft-prod.deb
+        #       cd packages;
+        #       ./build-package-list;
 
-        # - description: Add ppa for Regolith Desktop
-        #   command: yes | add-apt-repository ppa:regolith-linux/release
-
-        - description: Install software
-          command: >
-              cd packages;
-              ./build-package-list;
-
-
-
-
-- clean: ['~/','~/bin','~/.config']
-
-
-- create:
-    - ~/bin
-    - ~/bin/i3blocklets
-    - ~/repos
-    - ~/.themes
-
-
-# TODO Can this flag be set by some other means?
-- shell:
-    - description: Create primary host flag
-      command: touch ~/.primaryhost
-
-
-- link:
-    ~/:
-        path: home/.*
-        glob: true
-    ~/bin/:
-        path: lib/scripts/*
-        glob: true
-        exclude:
-            - lib/scripts/LICENSE
-            - lib/scripts/npdisksetup
-            - lib/scripts/save-the-change
-    ~/bin/quickemu:
-        path: lib/quickemu/quickemu
-        if: "which snap &&  snap list | grep '^qemu-virgil'"
-    ~/.config: ~
-    ~/Downloads: /tmp
-    ~/tmp: /tmp
-    ~/toby:
-        path: /nfs/home/$USER
-        ignore-missing: true
-    ~/.vim: ~
-    ~/VirtualBoxVMs:
-        path: /mnt/vmdrive/$USER/virtualbox
-        ignore-missing: true
-
-
-- shell:
-    - description: Download vim pathogen
-      command: >
-          DOTVIMAUTODIR="${PWD}/vim/autoload/";
-          SHASUMFILE="${PWD}/sha256.sums";
-          cd /tmp;
-          curl -LSo "pathogen.vim" "https://tpo.pe/pathogen.vim";
-          sha256sum --check --ignore-missing "$SHASUMFILE" && \
-            mv "pathogen.vim" "$DOTVIMAUTODIR";
-
-    - description: Install i3blocks blocklets
-      command: >
-        cd lib/my-i3blocklets;
-        ./deploy;
-
-    - description: Install theme files
-      stdout: false
-      command: >
-          cd ~;
-          ls .dotfiles/themes/*.tar.gz | head -n 1 | xargs tar -vxf;
