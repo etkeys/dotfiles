@@ -9,9 +9,9 @@ do
     IFS=, read prov pack addcmd <<< "${packages[i]}"
     echo -n "($((i+1))/$total) $pack "
     case "$prov" in
-        "apt" ) echo "apt-get install -y $addcmd $pack" ;;
-        "pip" ) echo "yes | pip install -q $pack" ;;
-        "snap" ) echo "snap install $pack $addcmd" ;;
+        "apt" ) apt-get install -y $addcmd $pack > /dev/null ;;
+        "pip" ) yes | pip install -q $pack > /dev/null ;;
+        "snap" ) snap install $pack $addcmd > /dev/null ;;
         * ) 1>&2 echo "Unknown package provider '$prov'." ;;
     esac
 done
