@@ -52,4 +52,6 @@
 	ignore = dirty
 [submodule "sudo"]
 	path = lib/dotbot-plugins/sudo
-	url = https://github.com/DrDynamic/dotbot-sudo.git
+	url = https://github.com/etkeys/dotbot-sudo.git
+	branch = bugfix/respect-defaults-directive
+	ignore = dirty
