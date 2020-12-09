@@ -37,8 +37,7 @@
                   systemctl stop cups;
                   systemctl disable cups;
                   echo cups disabled;
-              fi;
-              if systemctl is-active cups-browsed ]; then
+
                   systemctl stop cups-browsed;
                   systemctl disable cups-browsed;
                   echo cups-browsed disabled;
