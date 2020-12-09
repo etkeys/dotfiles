@@ -46,6 +46,7 @@ apt,libxinerama-dev,,,I don't know what this was for..maybe building something f
 apt,lxappearance,,,Will be need if creating i3 desktop from ground up.
 apt,lynx,aludra;harper,,Helps with markdown rendering.
 apt,nautilus,aludra;harper,,
+apt,neofetch,any,,Show Linux System Information with Distribution Logo
 apt,nfs-common,aludra;harper;jet;toby,,
 apt,numlockx,aludra;harper,,
 apt,obs-studio,harper,,
