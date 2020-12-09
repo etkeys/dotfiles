@@ -11,12 +11,11 @@ PLUGIN_DIR="lib/dotbot-plugins/"
 
 cd "${BASEDIR}"
 
-git submodule sync --recursive
+git submodule sync --recursive --quiet
 git submodule update --init --recursive 
 
 "${BASEDIR}/${DOTBOT_DIR}/${DOTBOT_BIN}" \
     --base-directory "${BASEDIR}" \
     --config-file "${CONFIG}" \
     --plugin "${BASEDIR}/${PLUGIN_DIR}/sudo/sudo.py" \
-    --verbose \
     "${@}"
