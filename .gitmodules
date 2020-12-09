@@ -53,5 +53,5 @@
 [submodule "sudo"]
 	path = lib/dotbot-plugins/sudo
 	url = https://github.com/etkeys/dotbot-sudo.git
-	branch = bugfix/respect-defaults-directive
+	branch = refactor/call-dotbot-directly
 	ignore = dirty
