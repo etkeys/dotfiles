@@ -15,10 +15,8 @@
     - shell:
         - description: Update sudoers config
           command: >
-              TEMP=/tmp/new_sudoers;
-              NEWSUDO=/etc/sudoers.d/01-my-overrides;
-              rm ${FILE} 2> /dev/null;
-              echo "Defaults !tty_tickets" >> ${FILE};
-              echo "Defaults timestamp_timeout 30" >> ${FILE};
-              (cat ${FILE} | EDITOR="tee -a" visudo -f ${NEWSUDO}) && rm ${FILE};
+              SOURCE=etc/sudoers-override;
+              TARGET=/etc/sudoers.d/01-my-overrides;
+              visudo -c -f ${SOURCE} &&
+              VISUAL="cp ${SOURCE}" visudo -f ${TARGET}
               
