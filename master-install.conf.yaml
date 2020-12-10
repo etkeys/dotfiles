@@ -72,8 +72,18 @@
         - description: Install packages
           command: packages/install-packages.py --tags $HOSTNAME $HOSTCAT
 
+        - description: Configure qemu-virgil
+          command: >
+              which snap > /dev/null && snap list | grep -q '^qemu-virgil' &&
+              (
+                  snap connect qemu-virgil:audio-record &&
+                  snap connect qemu-virgil:kvm &&
+                  snap connect qemu-virgil:raw-usb &&
+                  snap connect qemu-virgil:removable-media
+              ) ||
+              echo "qemu-virgil not installed... skipping."
 
-        
+
 
 - clean: ['~/','~/bin','~/.config']
 
