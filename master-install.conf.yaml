@@ -126,3 +126,19 @@
       command: >
           cd ~;
           ls .dotfiles/themes/*.tar.gz | head -n 1 | xargs tar -vxf;
+
+
+# Link root config files to mine
+- sudo:
+    - link:
+        ~/:
+            path: home/.*
+            glob: true
+            exclude:
+                - home/.fehbg
+                - home/.gitconfig
+                - home/.gtkrc-2.0
+                - home/.Xresources
+        ~/.vim:
+            path: vim
+
