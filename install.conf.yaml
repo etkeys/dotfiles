@@ -10,22 +10,15 @@
         stderr: true
         stdout: true
 
-- link:
-    ~/:
-        path: home/.*
-        glob: true
 
 - sudo:
-    - link:
-        ~/:
-            path: home/.*
-            glob: true
-            exclude:
-                - home/.fehbg
-                - home/.gitconfig
-                - home/.gtkrc-2.0
-                - home/.Xresources
-        ~/.vim:
-            path: vim
-
-
+    - shell:
+        - description: Update sudoers config
+          command: >
+              TEMP=/tmp/new_sudoers;
+              NEWSUDO=/etc/sudoers.d/01-my-overrides;
+              rm ${FILE} 2> /dev/null;
+              echo "Defaults !tty_tickets" >> ${FILE};
+              echo "Defaults timestamp_timeout 30" >> ${FILE};
+              (cat ${FILE} | EDITOR="tee -a" visudo -f ${NEWSUDO}) && rm ${FILE};
+              
