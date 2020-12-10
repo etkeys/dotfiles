@@ -12,8 +12,6 @@
 
 - sudo:
     - shell:
-        - description: Install software
-          command: >
-              cd packages;
-              ./build-package-list.sh jet | ./install-packages.sh;
+        - description: Install packages
+          command: packages/install-packages.py --tags $HOSTNAME $HOSTCAT
 
