@@ -10,12 +10,3 @@
         stderr: true
         stdout: true
 
-
-- sudo:
-    - shell:
-        - description: Install software
-          command: >
-              cd packages;
-              ./build-package-list;
-
-
