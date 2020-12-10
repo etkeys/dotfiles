@@ -2,6 +2,7 @@ provider,package,tags,additional_options,comments
 apt,python3-pip,any,,At top to allow for pip provider sooner. will need to link to /usr/local/bin/pip
 apt,snap,any,,At top to allow for snap provider sooner.
 apt,acpi,aludra;harper,,
+apt,alsa-utils,jet,,
 apt,apt-file,any,,
 apt,apt-transport-https,any,,
 apt,arandr,aludra;harper,,
@@ -55,6 +56,7 @@ apt,openbox,jet,,
 apt,packages-microsoft-prod,aludra;harper,,
 apt,pandoc,aludra;harper,,Helps with markdown rendering.
 apt,pavucontrol,aludra;harper;jet,,For jet need to install this after alsa.
+apt,pulseaudio,jet,,PulseAudio sound server to be used on top of Alsa
 apt,pcscd,harper,,Helps with reading CAC cards.
 apt,pcsc-tools,harper,,Helps with reading CAC cards.
 snap,powershell,aludra;harper,--classic,
@@ -80,7 +82,7 @@ snap,uno-calculator,aludra;harper,--channel=beta,
 apt,vim,any,,
 apt,vim-gtk3,aludra;harper,,
 apt,virt-manager,harper;jet,,
-apt,xdotool,aludra;haper,,
+apt,xdotool,aludra;harper,,
 apt,yad,aludra;harper,,
 apt,yadm,,,
 pip,youtube-dl,aludra;harper,,
