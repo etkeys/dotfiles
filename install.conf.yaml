@@ -10,8 +10,22 @@
         stderr: true
         stdout: true
 
+- link:
+    ~/:
+        path: home/.*
+        glob: true
+
 - sudo:
-    - shell:
-        - description: Install packages
-          command: packages/install-packages.py --tags $HOSTNAME $HOSTCAT
+    - link:
+        ~/:
+            path: home/.*
+            glob: true
+            exclude:
+                - home/.fehbg
+                - home/.gitconfig
+                - home/.gtkrc-2.0
+                - home/.Xresources
+        ~/.vim:
+            path: vim
+
 
