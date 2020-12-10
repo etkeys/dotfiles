@@ -30,32 +30,34 @@
 
         - description: Update grub
           command: >
-              datestamp=$(date +%y%m%d%H%M);
-              cp /etc/default/grub /etc/default/grub.$datestamp.bak;
+              DATESTAMP=$(date +%y%m%d%H%M);
+              cp /etc/default/grub /etc/default/grub.$DATESTAMP.bak &&
               sed -i -E "
                   s/^GRUB_TIMEOUT_STYLE=.+/GRUB_TIMEOUT_STYLE=menu/;
                   s/^GRUB_TIMEOUT=.+/GRUB_TIMEOUT=5/;
                   s/^GRUB_CMDLINE_LINUX_DEFAULT.+/GRUB_CMDLINE_LINUX_DEFAULT=\"\"/
-              " /etc/default/grub; 
-              update-grub;
+              " /etc/default/grub && 
+              update-grub
 
 
         - description: Disable CUPS
           command: >
-              if systemctl is-active cups ; then
-                  systemctl stop cups;
-                  systemctl disable cups;
-                  echo cups disabled;
+              systemctl is-active cups &&
+              (
+                  systemctl stop cups &&
+                  systemctl disable cups &&
+                  echo "cups disabled" &&
+                  systemctl stop cups-browsed &&
+                  systemctl disable cups &&
+                  echo "cups-browsed disabled"
+              ) ||
+              echo "cups not active... skipping."
 
-                  systemctl stop cups-browsed;
-                  systemctl disable cups-browsed;
-                  echo cups-browsed disabled;
-              fi;
 
         - description: Add Microsoft .NET Core package signing key
           command: >
-              cd /tmp;
-              wget -q "https://packages.microsoft.com/config/ubuntu/$(lsb_release --short --release)/packages-microsoft-prod.deb";
+              cd /tmp && 
+              wget -q "https://packages.microsoft.com/config/ubuntu/$(lsb_release --short --release)/packages-microsoft-prod.deb" &&
               dpkg -i packages-microsoft-prod.deb
         
         - description: Add repo for steam
@@ -120,21 +122,21 @@
       command: >
           DOTVIMAUTODIR="${PWD}/vim/autoload/";
           SHASUMFILE="${PWD}/sha256.sums";
-          cd /tmp;
-          curl -LSo "pathogen.vim" "https://tpo.pe/pathogen.vim";
-          sha256sum --check --ignore-missing "$SHASUMFILE" && \
-            mv "pathogen.vim" "$DOTVIMAUTODIR";
+          cd /tmp &&
+          curl -LSo "pathogen.vim" "https://tpo.pe/pathogen.vim" &&
+          sha256sum --check --ignore-missing "$SHASUMFILE" && 
+          mv "pathogen.vim" "$DOTVIMAUTODIR"
 
     - description: Install i3blocks blocklets
       command: >
-        cd lib/my-i3blocklets;
-        ./deploy;
+        cd lib/my-i3blocklets &&
+        ./deploy
 
     - description: Install theme files
       stdout: false
       command: >
-          cd ~;
-          ls .dotfiles/themes/*.tar.gz | head -n 1 | xargs tar -vxf;
+          cd ~ &&
+          ls .dotfiles/themes/*.tar.gz | head -n 1 | xargs tar -vxf
 
 
 # Link root config files to mine
