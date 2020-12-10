@@ -13,10 +13,17 @@
 
 - sudo:
     - shell:
-        - description: Update sudoers config
+        - description: install qemu for testing
+          command: snap install qemu-virgil --edge
+
+        - description: Configure qemu-virgil
           command: >
-              SOURCE=etc/sudoers-override;
-              TARGET=/etc/sudoers.d/01-my-overrides;
-              visudo -c -f ${SOURCE} &&
-              VISUAL="cp ${SOURCE}" visudo -f ${TARGET}
-              
+              which snap && snap list | grep -q '^qemu-virgil' &&
+              (
+                  snap connect qemu-virgil:audio-record &&
+                  snap connect qemu-virgil:kvm &&
+                  snap connect qemu-virgil:raw-usb &&
+                  snap connect qemu-virgil:removable-media
+              ) ||
+              echo "qemu-virgil not installed... skipping."
+

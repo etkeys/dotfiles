@@ -62,7 +62,7 @@ apt,pcsc-tools,harper,,Helps with reading CAC cards.
 snap,powershell,aludra;harper,--classic,
 apt,python3-dev,,,Will be installed with python3-pip. Keep here so I don't forget.
 apt,python3-venv,aludra;harper,,
-snap,qemu-virgil,harper,--channel=edge,
+snap,qemu-virgil,harper,--edge,
 apt,ranger,aludra;harper,,
 apt,redshift,aludra;harper;jet,,
 apt,redshift-gtk,aludra;harper;jet,,
