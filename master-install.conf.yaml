@@ -83,6 +83,9 @@
               ) ||
               echo "qemu-virgil not installed... skipping."
 
+        - description: Add installing user to kvm group
+          command: adduser ${SUDO_USER} kvm
+
 
 
 - clean: ['~/','~/bin','~/.config']
@@ -149,9 +152,9 @@
           ls .dotfiles/themes/*.tar.gz | head -n 1 | xargs tar -vxf
 
 
-# Link root config files to mine
 - sudo:
     - link:
+        # Link root config files to mine
         ~/:
             path: home/.*
             glob: true
@@ -163,3 +166,7 @@
         ~/.vim:
             path: vim
 
+        # Set up first choice link for qemu selection
+        /usr/bin/qemu:
+            path: /snap/qemu-virgil/current
+            if: "which snap &&  snap list | grep '^qemu-virgil'"
