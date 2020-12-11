@@ -10,6 +10,7 @@ apt,arp-scan,aludra;harper,,
 snap,audacity,harper,,
 apt,autoconf,aludra;harper,,
 apt,build-essential,aludra;harper,,
+apt,bridge-utils,harper;jet,,Utilities for configuring the Linux Ethernet bridge
 apt,caffeine,aludra,,
 apt,cheese,aludra;harper,,
 snap,chromium,aludra;harper,,
@@ -41,6 +42,8 @@ apt,libfontconfig1-dev,,,Needed to build luke smith dmenu
 apt,libindicator7,,,
 apt,libncursesw5-dev,,,Needed for luke smith something I think?
 snap,libreoffice,aludra;harper,,
+apt,libvirt-clients,harper;jet,,Programs for libvirt (e.g. virsh)
+apt,libvirt-daemon-system,harper;jet,,libvirt daemon
 apt,libx11-dev,,,Needed for luke smith dmenu
 apt,libxft-dev,,,Needed for luke smith dmenu
 apt,libxinerama-dev,,,I don't know what this was for..maybe building something for X?
@@ -62,6 +65,7 @@ apt,pcsc-tools,harper,,Helps with reading CAC cards.
 snap,powershell,aludra;harper,--classic,
 apt,python3-dev,,,Will be installed with python3-pip. Keep here so I don't forget.
 apt,python3-venv,aludra;harper,,
+apt,qemu-kvm,,,QEMU Full virtualization on x86 hardware. Will try to use qemu-virgile
 snap,qemu-virgil,harper,--edge,
 apt,ranger,aludra;harper,,
 apt,redshift,aludra;harper;jet,,
