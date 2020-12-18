@@ -74,7 +74,7 @@
 
         - description: Configure qemu-virgil
           command: >
-              which snap > /dev/null && snap list | grep -q '^qemu-virgil' &&
+              (command -v snap && snap list qemu-virgil) >/dev/null 2>&1 &&
               (
                   snap connect qemu-virgil:audio-record &&
                   snap connect qemu-virgil:kvm &&
@@ -117,7 +117,7 @@
             - lib/scripts/save-the-change
     ~/bin/quickemu:
         path: lib/quickemu/quickemu
-        if: "which snap &&  snap list | grep '^qemu-virgil'"
+        if: (command -v snap && snap list qemu-virgil) >/dev/null 2>&1
     ~/.config: ~
     ~/Downloads: /tmp
     ~/tmp: /tmp
@@ -169,4 +169,4 @@
         # Set up first choice link for qemu selection
         /usr/bin/qemu:
             path: /snap/qemu-virgil/current
-            if: "which snap &&  snap list | grep '^qemu-virgil'"
+            if: (command -v snap && snap list qemu-virgil) >/dev/null 2>&1
