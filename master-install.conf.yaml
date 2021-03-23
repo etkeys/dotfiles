@@ -12,6 +12,12 @@
 
 
 - sudo:
+    - link:
+        /usr/local/bin/pip:
+            path: /usr/bin/pip3
+            force: false
+            ignore-missing: true
+
     - shell:
         - description: Update grub
           command: >
