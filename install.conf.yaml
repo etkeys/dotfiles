@@ -81,6 +81,15 @@
 
 
 - shell:
+    - description: Download vim pathogen
+      command: >
+          DOTVIMAUTODIR="${PWD}/vim/autoload/";
+          SHASUMFILE="${PWD}/sha256.sums";
+          cd /tmp;
+          curl -LSo "pathogen.vim" "https://tpo.pe/pathogen.vim";
+          sha256sum --check --ignore-missing "$SHASUMFILE" && \
+            mv "pathogen.vim" "$DOTVIMAUTODIR";
+
     - description: Install i3blocks blocklets
       command: >
         cd lib/my-i3blocklets;
