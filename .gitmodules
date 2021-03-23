@@ -1,7 +1,7 @@
 [submodule "dotbot"]
 	path = lib/dotbot
-	url = https://github.com/etkeys/dotbot.git
-	branch = next/include-pending-prs
+	url = https://github.com/anishathalye/dotbot.git
+	branch = master
 	ignore = dirty
 [submodule "vim-ctrlp"]
 	path = lib/vim-plugins/ctrlp
@@ -52,6 +52,6 @@
 	ignore = dirty
 [submodule "sudo"]
 	path = lib/dotbot-plugins/sudo
-	url = https://github.com/etkeys/dotbot-sudo.git
-	branch = refactor/call-dotbot-directly
+	url = https://github.com/DrDynamic/dotbot-sudo.git
+	branch = master
 	ignore = dirty
