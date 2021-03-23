@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<head>
+    <style type="text/css">
+        td {
+            border: solid;
+            padding: 3px;
+        }
+        .color_base03 {background-color: #1f2430;}
+        .color_base02 {background-color: #292b30;}
+        .color_base01 {background-color: #bfbab0;}
+        .color_base00 {background-color: #cbccc6;}
+        .color_base0 {background-color: #e6e1cf;}
+        .color_base1 {background-color: #e6e1cf;}
+        .color_base2 {background-color: #f28779;}
+        .color_base3 {background-color: #ffffff;}
+        .color_yellow {background-color: #ffd580;}
+        .color_orange {background-color: #ffa759;}
+        .color_red {background-color: #ff3333;}
+        .color_magenta {background-color: #d4bfff;}
+        .color_violet {background-color: #b48ead;}
+        .color_blue {background-color: #77a8d9;}
+        .color_cyan {background-color: #95e6cb;}
+        .color_green {background-color: #bae67e;}
+        .color_brown {background-color: #f29e74;}
+        .color_ltblue {background-color: #73d0ff;}
+        .color_ltgreen {background-color: #a6cc70;}
+        .color_ltyellow {background-color: #ffe6b3;}
+        .color_ltcyan {background-color: #6ccfe6;}
+        #palette {
+            position: fixed;
+        }
+    </style>
+</head>
+<body>
+    <h1>URXVT palette</h1>
+    <!-- <div id="palette" style="float: left; width: 25%;"> -->
+    <div id="palette">
+        <h2>Palette</h2>
+        <table>
+            <tr> <th>Color name</th> <th>Appearance</th> </tr>
+            <tr> <td>color_base03</td> <td class="color_base03"></td> </tr>
+            <tr> <td>color_base02</td> <td class="color_base02"></td> </tr>
+            <tr> <td>color_base01</td> <td class="color_base01"></td> </tr>
+            <tr> <td>color_base00</td> <td class="color_base00"></td> </tr>
+            <tr> <td>color_base0</td> <td class="color_base0"></td> </tr>
+            <tr> <td>color_base1</td> <td class="color_base1"></td> </tr>
+            <tr> <td>color_base2</td> <td class="color_base2"></td> </tr>
+            <tr> <td>color_base3</td> <td class="color_base3"></td> </tr>
+            <tr> <td>color_yellow</td> <td class="color_yellow"></td> </tr>
+            <tr> <td>color_orange</td> <td class="color_orange"></td> </tr>
+            <tr> <td>color_red</td> <td class="color_red"></td> </tr>
+            <tr> <td>color_magenta</td> <td class="color_magenta"></td> </tr>
+            <tr> <td>color_violet</td> <td class="color_violet"></td> </tr>
+            <tr> <td>color_blue</td> <td class="color_blue"></td> </tr>
+            <tr> <td>color_cyan</td> <td class="color_cyan"></td> </tr>
+            <tr> <td>color_green</td> <td class="color_green"></td> </tr>
+            <tr> <td>color_brown</td> <td class="color_brown"></td> </tr>
+            <tr> <td>color_ltblue</td> <td class="color_ltblue"></td> </tr>
+            <tr> <td>color_ltgreen</td> <td class="color_ltgreen"></td> </tr>
+            <tr> <td>color_ltyellow</td> <td class="color_ltyellow"></td> </tr>
+            <tr> <td>color_ltcyan</td> <td class="color_ltcyan"></td> </tr>
+        </table>
+    </div>
+    <div style="margin-left: 20%;">
+        <h2>Scheme</h2>
+        <table>
+            <tr> <th>Scheme element</th> <th>Color name</th> <th>Appearance</th> </tr>
+            <tr> <td>URxvt.background</td> <td>color_base03</td> <td class="color_base03"></td> </tr>
+            <tr> <td>URxvt.color0</td> <td>color_base03</td> <td class="color_base03"></td> </tr>
+            <tr> <td>URxvt.color8</td> <td>color_base01</td> <td class="color_base01"></td> </tr>
+            <tr> <td>URxvt.color1</td> <td>color_red</td> <td class="color_red"></td> </tr>
+            <tr> <td>URxvt.color9</td> <td>color_orange</td> <td class="color_orange"></td> </tr>
+            <tr> <td>URxvt.color2</td> <td>color_green</td> <td class="color_green"></td> </tr>
+            <tr> <td>URxvt.color10</td> <td>color_ltgreen</td> <td class="color_ltgreen"></td> </tr>
+            <tr> <td>URxvt.color3</td> <td>color_yellow</td> <td class="color_yellow"></td> </tr>
+            <tr> <td>URxvt.color11</td> <td>color_ltyellow</td> <td class="color_ltyellow"></td> </tr>
+            <tr> <td>URxvt.color4</td> <td>color_ltblue</td> <td class="color_ltblue"></td> </tr>
+            <tr> <td>URxvt.color12</td> <td>color_blue</td> <td class="color_blue"></td> </tr>
+            <tr> <td>URxvt.color5</td> <td>color_magenta</td> <td class="color_magenta"></td> </tr>
+            <tr> <td>URxvt.color13</td> <td>color_ltviolet</td> <td class="color_violet"></td> </tr>
+            <tr> <td>URxvt.color6</td> <td>color_cyan</td> <td class="color_cyan"></td> </tr>
+            <tr> <td>URxvt.color14</td> <td>color_ltcyan</td> <td class="color_ltcyan"></td> </tr>
+            <tr> <td>URxvt.color7</td> <td>color_base00</td> <td class="color_base00"></td> </tr>
+            <tr> <td>URxvt.color15</td> <td>color_base3</td> <td class="color_base3"></td> </tr>
+            <tr> <td>URxvt.cursorColor</td> <td>color_orange</td> <td class="color_orange"></td> </tr>
+            <tr> <td>URxvt.foreground</td> <td>color_base00</td> <td class="color_base00"></td> </tr>
+        </table>
+    </div>
+
+
+</body>

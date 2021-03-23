@@ -1,0 +1,24 @@
+regolith.look: lascaille
+
+! -- Styles - Colors
+! lascaille uses Ayu Mirage coloring, which is nice. https://github.com/ayu-theme/ayu-colors
+#include "/etc/regolith/styles/lascaille/color"
+
+! -- Styles - Fonts
+#include "/home/erik/.config/regolith/styles/adwaita-dark-obsidian-sand/typeface"
+
+! -- Styles - Theme
+!#include "/etc/regolith/styles/lascaille/theme"
+#include "/home/erik/.config/regolith/styles/adwaita-dark-obsidian-sand/theme"
+
+! -- Applications
+! These files map values defined above into specific app settings.
+#include "/etc/regolith/styles/lascaille/st-term"
+#include "/etc/regolith/styles/lascaille/i3-wm"
+#include "/etc/regolith/styles/i3xrocks"
+#include "/etc/regolith/styles/rofi"
+#include "/etc/regolith/styles/gnome"
+#include "/home/erik/.config/regolith/styles/adwaita-dark-obsidian-sand/urxvt"
+
+! Have to put this here because it will be overwritten when the icon theme is applied
+Xcursor.theme: breeze_cursors
