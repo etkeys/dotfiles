@@ -12,11 +12,11 @@
 
 # editors
     alias v="vim"
+    alias vr="vim -R"
 
-    if [ $USER_PRIMARY_HOST_FLAG ] ; then
+    if which snap > /dev/null && snap list | grep -q '^code ' ; then
         alias c="code -r" #Execute vscode using a current instance
-        alias cn="code" #Execture vscode using a new instance
-        alias eclipse.run.java="$HOME/bin/eclipse/java/eclipse &"
+        alias cn="code -n" #Execture vscode using a new instance
     fi
 
 # commands    
@@ -31,6 +31,7 @@
     alias please='sudo "$BASH" -c "$(history -p !!)"'
     alias py='python3'
     alias snapr='snap run'
+    alias sqquickemu='quickemu --status-quo'
     alias sysd='systemctl'
     # alias vmdrive.start="sudo /home/erik/repos/scripts/vmdrive.start"
     # alias vmdrive.stop="sudo /home/erik/repos/scripts/vmdrive.stop"
