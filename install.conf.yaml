@@ -3,7 +3,7 @@
     link:
         create: true
         force: true
-        relink: true # Maybe??? debpens on if ~/ globbing works
+        relink: true 
 
 
 - clean: ['~']
@@ -12,31 +12,23 @@
 - create:
     - ~/bin
     - ~/repos
+    - ~/.themes
 
-
+# TODO Can this flag be set by some other means?
 - shell:
     - [touch ~/.primaryhost, Create the primary host flag]
 
-
 - link:
-    # ~/.bash_aliases: home/.bash_aliases
-    # ~/.bash_aliases.local: home/.bash_aliases.local
-    # ~/.bashrc: home/.bashrc
-    # ~/.fehbg: home/.fehbg
-    # ~/.gitconfig: home/.gitconfig
-    # ~/.gtkrc-2.0: home/.gtkrc-2.0
-    # ~/.profile: home/.profile
-    # ~/.vimrc: home/.vimrc
-    # ~/.Xmodmap: home/.Xmodmap
-    # ~/.Xresources: home/.Xresources
     ~/:
         path: home/.*
         glob: true
-        relink: true
-    ~/Downloads:
-        path: /tmp
-        relink: true
-    ~/tmp:
-        path: /tmp
-        relink: true
+    ~/Downloads: /tmp
+    ~/tmp: /tmp
+    ~/toby:
+        path: /nfs/home/$USER
+        ignore-missing: true
+    ~/VirtualBoxVMs:
+        path: /mnt/vmdrive/$USER/virtualbox
+        ignore-missing: true
+    ~/.config/Code/User: config/Code/User/*
 
