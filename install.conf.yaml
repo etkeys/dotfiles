@@ -6,7 +6,11 @@
         relink: true 
 
 
-- clean: ['~']
+- clean:
+    ~/:
+        force: true
+    ~/.config:
+        recursive: true
 
 
 - create:
@@ -14,9 +18,11 @@
     - ~/repos
     - ~/.themes
 
+
 # TODO Can this flag be set by some other means?
 - shell:
     - [touch ~/.primaryhost, Create the primary host flag]
+
 
 - link:
     ~/:
