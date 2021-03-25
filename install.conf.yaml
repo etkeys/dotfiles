@@ -32,3 +32,9 @@
         ignore-missing: true
     ~/.config/Code/User: config/Code/User/*
 
+
+# Install theme files
+- shell:
+    - command: cd ~; ls .dotfiles/themes/*.tar.gz | head -n 1 | xargs tar -vxf
+      description: Installing theme files
+      stderr: true
