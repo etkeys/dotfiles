@@ -8,6 +8,32 @@
         relink: true 
 
 
+- sudo:
+    - shell:
+        description: Updating grub
+        command: >
+            datestamp=$(date +%y%m%d%H%M);
+            cp /etc/default/grub /etc/default/grub.$datestamp.bak;
+            sed -E "
+                s/^GRUB_TIMEOUT_STYLE=.+/GRUB_TIMEOUT_STYLE=menu/;
+                s/^GRUB_TIMEOUT=.+/GRUB_TIMEOUT=5/;
+                s/^GRUB_CMDLINE_LINUX_DEFAULT.+/GRUB_CMDLINE_LINUX_DEFAULT=\"\"/
+            " /etc/default/grub > newgrub;
+    - shell:
+        description: Disable CUPS
+        command: >
+            if [ systemctl is-active cups ]; then
+                systemctl stop cups;
+                systemctl disable cups;
+                echo cups disabled;
+            fi;
+            if [ systemctl is-active cups-browsed ]; then
+                systemctl stop cups-browsed;
+                systemctl disable cups-browsed;
+                echo cups-browsed disabled;
+            fi;
+
+
 - clean: ['~/','~/bin','~/.config']
 
 
