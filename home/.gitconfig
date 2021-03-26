@@ -1,0 +1,22 @@
+[user]
+	name = E. Keys
+	email = e.t.keys@gmail.com
+[alias]
+	stat = status --short
+	logog = log --graph --oneline -n 10
+	reseth = reset --hard
+	resets = reset --soft
+	co = checkout
+	cob = checkout -b
+	unstage = reset HEAD --
+	last = log -2 HEAD
+	fetchp = fetch --prune
+	logogs = log --graph --oneline -n 5
+	logoga = log --graph --oneline
+	brancha = branch -a
+	addu = add -u
+	comam = commit --amend
+	com = commit
+	branchd = branch -D
+[core]
+	editor = vim

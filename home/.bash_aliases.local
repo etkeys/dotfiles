@@ -1,0 +1,8 @@
+# ssh
+    alias ssh.getstats="ssh-getstats jet toby tum | less"
+    alias ssh.jet="ssh $USER@jet"
+    alias ssh.toby="ssh $USER@toby"
+    alias ssh.tum="ssh $USER@tum"
+    
+# virsh
+    alias virsh.jet="virsh --connect $QEMU_JET"
