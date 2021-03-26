@@ -50,3 +50,6 @@
 	path = lib/scripts
 	url = https://github.com/etkeys/scripts.git
 	ignore = dirty
+[submodule "sudo"]
+	path = lib/dotbot-plugins/sudo
+	url = https://github.com/DrDynamic/dotbot-sudo.git
