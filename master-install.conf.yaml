@@ -75,16 +75,14 @@
 
         - description: Disable CUPS
           command: >
-              systemctl is-active cups &&
+              systemctl is-enabled cups &&
               (
-                  systemctl stop cups &&
-                  systemctl disable cups &&
+                  systemctl disable --now cups &&
                   echo "cups disabled" &&
-                  systemctl stop cups-browsed &&
-                  systemctl disable cups &&
+                  systemctl disable --now cups-browsed &&
                   echo "cups-browsed disabled"
               ) ||
-              echo "cups not active... skipping."
+              echo "cups not enabled... skipping."
 
 
         - description: Add Microsoft .NET Core package signing key
