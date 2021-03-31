@@ -28,6 +28,8 @@
               KMAPPATH=/usr/local/share &&
               SERVICEFILE=${NAME}.service &&
               SERVICEPATH=/usr/local/lib/systemd/system &&
+              ( systemctl is-enabled ${SERVICEFILE} ||
+              (
               mkdir -p {${KMAPPATH},${SERVICEPATH}} &&
               { cat <<- EOF > ${KMAPPATH}/${KMAPFILE}
               keymaps 0-127
@@ -49,8 +51,8 @@
               WantedBy=multi-user.target 
               EOF
               } &&
-              systemctl enable ${SERVICEPATH}/${SERVICEFILE} &&
-              systemctl start ${SERVICEFILE}
+              systemctl enable --now ${SERVICEPATH}/${SERVICEFILE}
+              ))
 
 
         - description: Update sudoers
